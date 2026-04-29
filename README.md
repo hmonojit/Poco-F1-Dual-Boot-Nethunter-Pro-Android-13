@@ -26,13 +26,13 @@ In this phase, we focus on:
 >> adb shell su -c "cat /proc/cmdline | grep -i 'dsi'"
 
 # --- 3. Backing up critical partitions (Boot, DTBO) ---
-# Turn on USB Debugging and Connect PC
+Turn on USB Debugging and Connect PC
 >> adb devices
 >> adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
 >> adb shell
 >>(beryllium $) su
-# (Inside Phone)                          # grant superuser request on phone
-# (Back to PC)
+(Inside Phone)                          # grant superuser request on phone
+(Back to PC)
 >>(beryllium #) dd if=/dev/block/by-name/boot of=/sdcard/boot.img (e.g. sde45)
 >>(beryllium #) dd if=/dev/block/by-name/dtbo of=/sdcard/dtbo.img (e.g. sde37)
 >>(beryllium #) exit
@@ -41,7 +41,7 @@ In this phase, we focus on:
 >> adb pull /sdcard/dtbo.img ~/Desktop/
 
 # --- 4. Preparing the SD Card for RootFS ---
-# Download SDM845 file from official site
+Download SDM845 file from official site
 >> cd Downloads
 >> 7z x kali-nethunterpro-2026.1-sdm845.tar.xz
 >> 7z x kali-nethunterpro-2026.1-sdm845.tar
@@ -60,7 +60,7 @@ reboot fastboot                           # (Volume Down + Power)
 >> fastboot reboot
 
 # --- Back to Android ---
-# Reboot to fastboot                      # (Volume Down + Power)
+Reboot to fastboot                      # (Volume Down + Power)
 >> fastboot flash boot boot.img
 >> fastboot flash dtbo dtbo.img
 >> fastboot reboot
