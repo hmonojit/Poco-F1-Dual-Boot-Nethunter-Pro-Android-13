@@ -56,7 +56,7 @@ Download SDM845 file from official site
 reboot fastboot                           # (Volume Down + Power)
 >> fastboot devices
 >> fastboot flash boot nethunterpro-20260320-sdm845-phosh.boot-beryllium-tianma.img
->> fastboot erase dtbo (insert rootfs flashed SD Card)
+>> fastboot erase dtbo (insert rootfs flashed SD Card into ur phone)
 >> fastboot reboot
 
 # --- Back to Android ---
