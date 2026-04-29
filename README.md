@@ -30,13 +30,13 @@ In this phase, we focus on:
 >> adb devices
 >> adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
 >> adb shell
-# (Inside Phone Shell)
->>(beryllium $) su                        # grant superuser request on phone
+>>(beryllium $) su
+# (Inside Phone)                          # grant superuser request on phone
+# (Back to PC)
 >>(beryllium #) dd if=/dev/block/by-name/boot of=/sdcard/boot.img
 >>(beryllium #) dd if=/dev/block/by-name/dtbo of=/sdcard/dtbo.img
 >>(beryllium #) exit
 >>(beryllium $) exit
-# (Back to PC)
 >> adb pull /sdcard/boot.img ~/Desktop/
 >> adb pull /sdcard/dtbo.img ~/Desktop/
 
