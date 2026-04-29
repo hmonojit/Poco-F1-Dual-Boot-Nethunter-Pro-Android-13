@@ -1,17 +1,16 @@
 # Poco-F1-Dual-Boot-Nethunter-Pro-Android-13 🛡️
 This repo helps you to install Nethunter Pro on Poco F1 alongside Android 13 in dual boot mode.
-This project is part of a video series on running a full Kali NetHunter Pro environment on the Poco F1. 
-
+This project is part of a video series on running a full Kali NetHunter Pro environment on the Poco F1.
 ### ⚡ Phase 1: Installation & Setup
 In this phase, we focus on:
-- Lab Setup 
-- Identifying hardware (Display Panel).
-- Backing up critical partitions (Boot, DTBO).
-- Preparing the SD Card for RootFS.
-- Final Touch to Boot to Nethunter Pro.
-- Back to Android.
+ * Lab Setup
+ * Identifying hardware (Display Panel).
+ * Backing up critical partitions (Boot, DTBO).
+ * Preparing the SD Card for RootFS.
+ * Final Touch to Boot to Nethunter Pro.
+ * Back to Android.
 ### 📋 Commands for Phase 1:
-
+```bash
 # --- 1. Lab Setup ---
 sudo apt update
 sudo apt install adb fastboot -y     # install adb and fastboot drivers
@@ -65,7 +64,5 @@ fastboot flash boot boot.img
 fastboot flash dtbo dtbo.img
 fastboot reboot
 
-
+```
 **🚀 Coming Soon:** Phase 2 - Automated OS Switching Scripts (No Laptop Needed). Stay tuned for the update!
-
-
