@@ -13,10 +13,10 @@ In this phase, we focus on:
 ```bash
 # --- 1. Lab Setup ---
 sudo apt update
-sudo apt install adb fastboot -y     # install adb and fastboot drivers
-sudo apt install 7zip               # install 7zip
-sudo apt install make gcc zlib1g-dev # install simg2img dependencies
-git clone [https://github.com/anestisb/android-simg2img.git](https://github.com/anestisb/android-simg2img.git)
+sudo apt install adb fastboot -y       # install adb and fastboot drivers
+sudo apt install 7zip                  # install 7zip
+sudo apt install make gcc zlib1g-dev   # install simg2img dependencies
+git clone https://github.com/anestisb/android-simg2img.git
 cd android-simg2img
 make
 sudo cp simg2img /usr/local/bin/
@@ -31,7 +31,7 @@ adb devices
 adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
 adb shell
 # (Inside Phone Shell)
-su                                  # grant superuser request on phone
+su                                    # grant superuser request on phone
 dd if=/dev/block/by-name/boot of=/sdcard/boot.img
 dd if=/dev/block/by-name/dtbo of=/sdcard/dtbo.img
 exit
@@ -49,6 +49,7 @@ file nethunterpro-20260320-sdm845-phosh.rootfs.img
 simg2img nethunterpro-20260320-sdm845-phosh.rootfs.img rootfs_ext4.img
 lsblk                               # identify the external SDcard e.g. sdc
 sudo dd if=rootfs_ext4.img of=/dev/sdc bs=1M oflag=sync status=progress
+sync
 # *unplug the SD Card from PC*
 
 # --- 5. Final Touch for Boot ---
