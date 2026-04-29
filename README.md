@@ -56,11 +56,11 @@ In this phase, we focus on:
 reboot fastboot                           # (Volume Down + Power)
 >> fastboot devices
 >> fastboot flash boot nethunterpro-20260320-sdm845-phosh.boot-beryllium-tianma.img
->> fastboot erase dtbo
+>> fastboot erase dtbo (insert rootfs flashed SD Card)
 >> fastboot reboot
 
 # --- Back to Android ---
-# Reboot to fastboot                      #(Volume Down + Power)
+# Reboot to fastboot                      # (Volume Down + Power)
 >> fastboot flash boot boot.img
 >> fastboot flash dtbo dtbo.img
 >> fastboot reboot
