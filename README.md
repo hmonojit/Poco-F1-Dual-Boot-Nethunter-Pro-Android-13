@@ -12,7 +12,7 @@ In this phase, we focus on:
 ### 📋 Commands for Phase 1:
 ```bash
 # --- 1. Lab Setup ---
-sudo apt update
+>> sudo apt update
 sudo apt install adb fastboot -y       # install adb and fastboot drivers
 sudo apt install 7zip                  # install 7zip
 sudo apt install make gcc zlib1g-dev   # install simg2img dependencies
