@@ -31,7 +31,7 @@ Turn on USB Debugging and Connect PC
 >> adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
 >> adb shell
 >>(beryllium $) su
-(Inside Phone)                          # grant superuser request on phone
+(Inside Phone)                          # grant superuser request on phone using Magisk
 (Back to PC)
 >>(beryllium #) dd if=/dev/block/by-name(e.g. sde45) of=/sdcard/boot.img 
 >>(beryllium #) dd if=/dev/block/by-name(e.g. sde37) of=/sdcard/dtbo.img 
