@@ -26,7 +26,8 @@ In this phase, we focus on:
 ```bash
 >> adb shell su -c "cat /proc/cmdline | grep -i 'dsi'"
 ```
-# --- 3. Backing up critical partitions (Boot, DTBO) ---
+### --- 3. Backing up critical partitions (Boot, DTBO) ---
+```bash
 Turn on USB Debugging and Connect PC
 >> adb devices
 >> adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
@@ -40,8 +41,9 @@ Turn on USB Debugging and Connect PC
 >>(beryllium $) exit
 >> adb pull /sdcard/boot.img ~/Desktop/
 >> adb pull /sdcard/dtbo.img ~/Desktop/
-
-# --- 4. Preparing the SD Card for RootFS ---
+```
+### --- 4. Preparing the SD Card for RootFS ---
+```bash
 Download SDM845 file from official site
 >> cd Downloads
 >> 7z x kali-nethunterpro-2026.1-sdm845.tar.xz
@@ -52,15 +54,17 @@ Download SDM845 file from official site
 >> sudo dd if=rootfs_ext4.img of=/dev/sdc bs=1M oflag=sync status=progress
 >> sync
 # *unplug the SD Card from PC*
-
-# --- 5. Final Touch to boot Nethunter Pro ---
+```
+### --- 5. Final Touch to boot Nethunter Pro ---
+```bash
 reboot fastboot                           # (Volume Down + Power)
 >> fastboot devices
 >> fastboot flash boot nethunterpro-20260320-sdm845-phosh.boot-beryllium-tianma.img
 >> fastboot erase dtbo (insert rootfs flashed SD Card into ur phone)
 >> fastboot reboot
-
-# --- Back to Android ---
+```
+### --- Back to Android ---
+```bash
 Reboot to fastboot                      # (Volume Down + Power)
 >> fastboot flash boot boot.img
 >> fastboot flash dtbo dtbo.img
