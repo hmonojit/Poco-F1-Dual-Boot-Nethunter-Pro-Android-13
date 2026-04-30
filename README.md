@@ -10,8 +10,8 @@ In this phase, we focus on:
  * Final Touch to Boot to Nethunter Pro.
  * Back to Android.
 ### 📋 Commands for Phase 1:
+### --- 1. Lab Setup ---
 ```bash
-# --- 1. Lab Setup ---
 >> sudo apt update
 >> sudo apt install adb fastboot -y       # install adb and fastboot drivers
 >> sudo apt install 7zip                  # install 7zip
@@ -21,10 +21,11 @@ In this phase, we focus on:
 >> make
 >> sudo cp simg2img /usr/local/bin/
 >> sudo cp img2simg /usr/local/bin/
-
-# --- 2. Identifying hardware (Display Panel) ---
+```
+### --- 2. Identifying hardware (Display Panel) ---
+```bash
 >> adb shell su -c "cat /proc/cmdline | grep -i 'dsi'"
-
+```
 # --- 3. Backing up critical partitions (Boot, DTBO) ---
 Turn on USB Debugging and Connect PC
 >> adb devices
