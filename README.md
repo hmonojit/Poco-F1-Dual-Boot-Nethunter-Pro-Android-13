@@ -33,12 +33,8 @@ Turn on USB Debugging and Connect PC
 ### --- 3. Backing up critical partitions (Boot, DTBO) ---
 ```bash
 >> adb shell "ls -l /dev/block/by-name | grep -E 'boot|dtbo'"
->> adb shell
->>(beryllium $) su
-(beryllium #) >> dd if=/dev/block/by-name(e.g. sde45) of=/sdcard/boot.img 
-(beryllium #) >> dd if=/dev/block/by-name(e.g. sde37) of=/sdcard/dtbo.img 
-(beryllium #) >> exit
-(beryllium $) >> exit
+>> adb shell su -c dd if=/dev/block/by-name(e.g. sde45) of=/sdcard/boot.img 
+>> adb shell su -c dd if=/dev/block/by-name(e.g. sde37) of=/sdcard/dtbo.img 
 >> adb pull /sdcard/boot.img ~/Desktop/
 >> adb pull /sdcard/dtbo.img ~/Desktop/
 ```
